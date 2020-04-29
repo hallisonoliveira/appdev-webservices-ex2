@@ -7,9 +7,9 @@ Faça um form onde o usuário possa colocar duas datas (data inicio e data fim) 
 
 • A diferença de dias entre as datas;
 
-• A diferença de semana entre as datas;
+• A diferença de semanas entre as datas;
 
-• A diferença de messes entre as datas;
+• A diferença de meses entre as datas;
 
 ## Tarefa 2
 Faça um form onde o usuário possa entrar com números separados por ';' e o servidor retorne;
