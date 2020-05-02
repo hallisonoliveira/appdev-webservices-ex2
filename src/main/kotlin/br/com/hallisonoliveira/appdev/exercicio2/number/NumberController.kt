@@ -24,7 +24,7 @@ class NumberController {
         } catch (exception: Exception) {
             print(exception.message)
             throw ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Falha ao processar requisição"
+                    HttpStatus.BAD_REQUEST, exception.message
             )
         }
     }

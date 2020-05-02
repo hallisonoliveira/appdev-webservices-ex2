@@ -3,8 +3,20 @@ package br.com.hallisonoliveira.appdev.exercicio2.number
 class NumberService {
 
     private fun stringToList(numbers: String) : List<Int> {
-        val list = numbers.trim().replace("\\s".toRegex(), "").split(";")
-        return list.map { it.toInt() }
+        var processedNumbers = numbers
+        if (numbers.startsWith(";")) {
+            processedNumbers = processedNumbers.drop(0)
+        }
+
+        if (numbers.endsWith(";")) {
+            processedNumbers = processedNumbers.drop(processedNumbers.lastIndex)
+        }
+
+        val list = processedNumbers.trim()
+                .replace("\\s".toRegex(), "")
+                .replace("\"".toRegex(), "")
+                .split(";")
+        return list.filter { it.isNotEmpty() }.map { it.toInt() }
     }
 
     fun getClassifiedNumbers(numbers: String) : NumberResponse {
